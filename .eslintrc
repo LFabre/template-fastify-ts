@@ -1,0 +1,90 @@
+{
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "rules": {
+    "eol-last": "error",
+    "semi": ["error", "always"],
+
+    "no-var": "error",
+    "no-undef": "error",
+    "no-return-await": "error",
+    "no-return-assign": "error",
+    "no-else-return": "error",
+    "no-spaced-func": "error",
+    "no-trailing-spaces": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-multiple-empty-lines": "error",
+    "no-unexpected-multiline": "error",
+    "no-empty-function": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "vars": "all",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+
+    "prefer-arrow-callback": "error",
+    "array-bracket-spacing": ["error", "never"],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreUrls": true
+      }
+    ],
+    "curly": ["error", "all"],
+    "keyword-spacing": "error",
+    "default-param-last": "error",
+    "space-before-blocks": ["error", "always"],
+    "space-in-parens": ["error", "never"],
+    "object-curly-spacing": ["error", "never"],
+    "space-unary-ops": [
+      "error",
+      {
+        "nonwords": false,
+        "overrides": {}
+      }
+    ],
+    "sort-imports": [
+      1,
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ]
+  }
+}
