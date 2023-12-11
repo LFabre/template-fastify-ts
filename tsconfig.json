@@ -23,9 +23,9 @@
     "importHelpers": true,
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"],
+      "@/*": ["*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env", "src/**/*.d.ts"],
-  "exclude": ["node_modules", "src/http", "src/logs", "src/tests"]
+  "include": ["src/**/*.ts", "src/**/*.json", "src/**/*.d.ts", ".env"],
+  "exclude": ["node_modules", "src/tests", "src/__tests__"]
 }
