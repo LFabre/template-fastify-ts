@@ -9,8 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "lint": "eslint --ext .ts",
-    "lint:fix": "eslint --ext .ts --fix",
-    "prepare": "husky install"
+    "lint:fix": "eslint --ext .ts --fix",    
+    "prepare": "husky install",
+    "hooks:lint": "eslint --fix",
+    "hooks:prettier": "prettier --write"
   },
   "dependencies": {
     "@fastify/autoload": "^5.8.0",

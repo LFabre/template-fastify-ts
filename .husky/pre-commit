@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Hook | pre-commit | Start"
+
+stagedFiles="$(git diff --cached --name-only --diff-filter=d HEAD)"
+filesToFormat=$(echo "$stagedFiles" | grep -E "\.(ts)$" | xargs)
+filesToLint=$(echo "$stagedFiles" | grep -E "\.(ts)$" | xargs)
+
+if [ -n "$filesToFormat" ]; then
+    echo "Hook | pre-commit | Running prettier..."
+    npm run hooks:prettier -- $filesToFormat
+fi
+
+if [ -n "$filesToLint" ]; then
+    echo "Hook | pre-commit | Running eslint..."
+    npm run lint -- $filesToLint
+fi
+
+if [ -n "$filesToFormat" ] || [ -n "$filesToLint" ]; then
+    echo "Hook | pre-commit | Adding files..."
+    echo "$stagedFiles" | xargs -L1 git add
+fi
+
+echo "Hook | pre-commit | End"
