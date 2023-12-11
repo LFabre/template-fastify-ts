@@ -1,5 +1,5 @@
 {
-  "watch": ["src", ".env"],
+  "exec": "npm run start:dev",
   "ext": "js,ts,json",
-  "exec": "ts-node -r tsconfig-paths/register --transpile-only src/server.ts"
+  "watch": ["src", ".env"]
 }

@@ -6,10 +6,10 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
+    "start:dev": "ts-node -r tsconfig-paths/register --transpile-only src/server.ts | pino-pretty",
     "lint": "eslint --ext .ts",
-    "lint:fix": "eslint --ext .ts --fix",    
+    "lint:fix": "eslint --ext .ts --fix",
     "prepare": "husky install",
     "hooks:lint": "eslint --fix",
     "hooks:prettier": "prettier --write"
@@ -21,7 +21,8 @@
     "@fastify/swagger-ui": "^2.0.1",
     "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
-    "fastify-plugin": "^4.5.1"
+    "fastify-plugin": "^4.5.1",
+    "pino-pretty": "^10.2.3"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
