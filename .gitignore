@@ -1,0 +1,14 @@
+dist
+out
+build
+.vscode
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+.env
+*.tsbuildinfo
+.eslintcache
